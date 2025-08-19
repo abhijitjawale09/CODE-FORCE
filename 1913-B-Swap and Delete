@@ -1,0 +1,78 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// -------------------- Shortcuts --------------------
+#define int long long             // use long long everywhere
+#define pb push_back              // shortcut for push_back
+#define ff first
+#define ss second
+#define all(x) (x).begin(), (x).end()
+#define rall(x) (x).rbegin(), (x).rend()
+#define sz(x) (int)(x).size()
+
+// -------------------- Debugging --------------------
+#define debug(x) cerr << #x << " = " << x << "\n"
+#define debugArr(a,n) cerr << #a << ": "; for(int i=0;i<n;i++) cerr<<a[i]<<" "; cerr<<"\n";
+
+// -------------------- Typedefs --------------------
+typedef vector<int> vi;
+typedef pair<int,int> pii;
+typedef vector<pii> vpi;
+typedef vector<vi> vvi;
+
+// -------------------- Constants --------------------
+const int MOD = 1e9+7;
+const int INF = 1e18;
+const long double PI = acos(-1.0);
+
+// -------------------- Loops --------------------
+#define FOR(i,a,b) for(int i=a; i<b; i++)
+#define REP(i,n) for(int i=0; i<n; i++)
+#define ROF(i,a,b) for(int i=a; i>=b; i--)
+
+// -------------------- Functions --------------------
+int gcd(int a,int b){ return b?gcd(b,a%b):a; }
+int lcm(int a,int b){ return a/gcd(a,b)*b; }
+
+//----------------------------------Solution code here-----------------------------//
+void abhijitjawale09() {
+    string s; cin>>s;
+    
+    int n = s.size();
+    if(n == 0) {
+        cout<<"0"<<endl;
+        return;
+    }
+    int co = 0, ce = 0;
+    for (int  i = 0; i < n; i++){
+        if(s[i] == '0') {
+            co++;
+        }else{
+            ce++;
+        }
+    }
+      int length_of_t = 0;
+
+        for(int i = 0; i < n; i++) 
+        {
+            if (s[i] == '0' && ce > 0)
+                ce--, length_of_t++;
+            else if (s[i] == '1' && co > 0)
+                co--, length_of_t++;
+            else
+                break;
+        }
+
+        cout << n - length_of_t << endl;
+}
+// -------------------- Main --------------------
+int32_t main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    int t; 
+    cin >> t;
+    while (t--) {
+        abhijitjawale09();
+    }
+    return 0;
+}
