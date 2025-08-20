@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// -------------------- Shortcuts --------------------
+#define int long long
+#define pb push_back
+#define ff first
+#define ss second
+#define all(x) (x).begin(), (x).end()
+#define rall(x) (x).rbegin(), (x).rend()
+#define sz(x) (int)(x).size()
+
+// -------------------- Constants --------------------
+const int INF = 1e18;
+
+//----------------------------------Solution code here-----------------------------//
+void abhijitjawale09() {
+    int n;
+    cin >> n;
+    int ans = INF;
+    for (int i = 0; i < n; i++) {
+        int x;
+        cin >> x;
+        ans = min(ans, abs(x));
+    }
+    cout << ans << "\n";
+}
+
+// -------------------- Main --------------------
+int32_t main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+
+    abhijitjawale09();
+    return 0;
+}
