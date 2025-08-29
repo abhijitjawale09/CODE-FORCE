@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void solve() {
+    int n;
+    cin >> n;
+
+    vector<int> a(n);
+    int nn = 0; 
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+        if (a[i] == -1) nn++;
+    }
+
+    int ops = 0;
+    if (nn > n/2) {
+        ops = nn - n/2;   
+        nn = n/2;         
+    }
+    if (nn % 2 == 1) {
+        ops++;
+    }
+
+    cout << ops << "\n";
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+
+    int t;
+    cin >> t;
+    while (t--) solve();
+    return 0;
+}
